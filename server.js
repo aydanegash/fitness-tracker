@@ -12,24 +12,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-
-router.get("/exercise", (req, res) => {
-  res.sendFile(path.join(__dirname, "./Develop/public/exercise"));
-});
-
-router.get("/stats", (req, res) => {
-  res.sendFile(path.join(__dirname, "./Develop/public/stats"));
-});
-
 app.use(require("./routes/api.js"));
+app.use(require('./routes/view.js'));
 
-// router.get("/exercise", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../public/exercise.html"));
-// });
-
-// router.get("/stats", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../public/stats.html"));
-// });
 
 module.exports = router;
 
@@ -38,8 +23,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-tracker
   useFindAndModify: false
 });
 
-// routes
-//app.use(require("./routes"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
