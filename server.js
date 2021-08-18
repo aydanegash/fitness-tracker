@@ -22,7 +22,6 @@ router.get("/stats", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
-module.exports = router;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-tracker", {
   useNewUrlParser: true,
