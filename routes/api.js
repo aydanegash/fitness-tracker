@@ -12,6 +12,20 @@ router.post('/api/workouts', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
+//delet routes for workouts
+router.delete('/api/workouts', ({ body }, res) => {
+  Workout.findByIdAndDelete(body.id)
+    .then(() => {
+      res.json(dbWorkout);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+=======
+>>>>>>> 237aa7bead7dabd830290fbdb23a860bc9c97073
 //update routes for workout
 router.put('/api/workouts/:id', ({ body, params }, res) => {
   Workout.findByIdAndUpdate(
@@ -27,6 +41,27 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     });
 });
 
+<<<<<<< HEAD
+
+router.get('/api/workouts', (req, res) => {
+	Workout.aggregate([ 
+		{$addFields: {
+			totalDuration: 
+				{
+					$sum: '$exercises.duration'
+				}
+		}}
+	])
+		.then((dbWorkout) => {
+			res.json(dbWorkout);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
+
+//get routes for the 7 day averages 
+=======
 router.get('/api/workouts', (req, res) => {
   Workout.aggregate([
     {
@@ -45,6 +80,7 @@ router.get('/api/workouts', (req, res) => {
     });
 });
 
+>>>>>>> 237aa7bead7dabd830290fbdb23a860bc9c97073
 router.get('/api/workouts/range', (req, res) => {
   Workout.aggregate([
     {
@@ -58,7 +94,10 @@ router.get('/api/workouts/range', (req, res) => {
     .sort({ _id: -1 })
     .limit(7)
     .then((dbWorkouts) => {
+<<<<<<< HEAD
+=======
       console.log(dbWorkouts);
+>>>>>>> 237aa7bead7dabd830290fbdb23a860bc9c97073
       res.json(dbWorkouts);
     })
     .catch((err) => {
@@ -66,6 +105,9 @@ router.get('/api/workouts/range', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
+
+=======
 router.delete('/api/workouts', ({ body }, res) => {
   Workout.findByIdAndDelete(body.id)
     .then(() => {
@@ -75,5 +117,6 @@ router.delete('/api/workouts', ({ body }, res) => {
       res.json(err);
     });
 });
+>>>>>>> 237aa7bead7dabd830290fbdb23a860bc9c97073
 
 module.exports = router;
