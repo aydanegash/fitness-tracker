@@ -13,8 +13,8 @@ Exercises can also be deleted updated or modified.
 
  ## Links 
   
-  *GitHub Repository
-  *Deplyed Site
+  * GitHub Repository: 
+  * Heroku Deplyed Site: https://pacific-dusk-45260.herokuapp.com/
 
 
 ## Pictures
