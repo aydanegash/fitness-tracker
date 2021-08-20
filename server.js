@@ -13,7 +13,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(require("./routes/api.js"));
-<<<<<<< HEAD
 app.use(require("./routes/index"))
 
 // router.get("/exercise", (req, res) => {
@@ -42,22 +41,6 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
-=======
-
-router.get("/exercise", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/exercise.html"));
-});
-
-router.get("/stats", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/stats.html"));
-});
-
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-tracker", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
->>>>>>> 237aa7bead7dabd830290fbdb23a860bc9c97073
 
 
 app.listen(PORT, () => {
