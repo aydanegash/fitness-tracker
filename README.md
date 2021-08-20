@@ -18,3 +18,8 @@ The stats of these workouts will be displayed in an two easy to comprehend graph
 
   * Heroku link: https://pacific-dusk-45260.herokuapp.com/
   * GitHub link: https://github.com/aydanegash/fitness-tracker
+
+
+# License 
+
+  MIT License 
