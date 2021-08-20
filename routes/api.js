@@ -93,6 +93,9 @@ router.get('/api/workouts/range', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70678886dafcfbfd85c5eedd6f8a9c0fdd626042
 
 module.exports = router;
