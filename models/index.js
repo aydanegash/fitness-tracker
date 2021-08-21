@@ -1,3 +1,3 @@
 module.exports = {
-    Fitness: require('./workout')
+    Workout: require('./workout')
   };
